@@ -1,10 +1,10 @@
 {
 	"folders": [
 		{
-			"path": "brainblank.backend"
+			"path": "brainblank_backend"
 		},
 		{
-			"path": "brainblank.frontend"
+			"path": "brainblank_frontend"
 		}
 	]
 }
