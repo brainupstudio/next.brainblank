@@ -15,6 +15,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'getuikit.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'lobster-app-o4gva.ondigitalocean.app',
+      },
     ],
   },
   async rewrites() {
