@@ -6,19 +6,16 @@ import {
   getImagePage
 } from '../lib/api'
 import Layout from '../components/layout'
-import parse from 'html-react-parser';
-import Components from '../components/components';
-import Image from 'next/image';
+import Components from '../components/components'
+import Image from 'next/image'
+import React from 'react'
 
 export default function Page({ page, navigation, components, image }) {
   return (
     <Layout navigation={navigation}>
-      <div>
-        <h1>{page.data.attributes.Title}</h1>
-        {parse(page.data.attributes.Text)}
-        {image && <Image src={image.url} height={image.height} width={image.width} layout="fixed" alt="" />}
-        <Components key={page.data.id} data={components} pageID={page.data.id}></Components>
-      </div>
+      {image && <Image src={image.url} height={image.height} width={image.width} layout="fixed" alt="" />}
+      {/* <h1>{page.data.attributes.Title}</h1> */}
+      <Components data={components}></Components>
     </Layout>
   )
 }

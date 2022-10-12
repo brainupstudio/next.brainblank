@@ -19,12 +19,6 @@
     "key": {
       "type": "uid",
       "targetField": "name"
-    },
-    "pages": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::page.page",
-      "mappedBy": "navigation_audience"
     }
   }
 }

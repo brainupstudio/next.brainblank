@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_content_paragraphs",
+  "info": {
+    "displayName": "Paragraph",
+    "icon": "paragraph",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Paragraph": {
+      "type": "richtext",
+      "default": "Write your text here..."
+    }
+  }
+}

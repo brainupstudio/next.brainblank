@@ -9713,6 +9713,11 @@ strapi-plugin-navigation@^2.2.2:
     request "^2.83.0"
     uuid "^8.3.0"
 
+strapi-plugin-populate-deep@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/strapi-plugin-populate-deep/-/strapi-plugin-populate-deep-1.0.1.tgz#f8ab37746ad5f6dece01548c9e3c07e36bbafdc2"
+  integrity sha512-aqVUce9gB95U4BLKXFFiI20tIdZsltiYZRgjeTcPn4tbkXjYgrC1d2O7NOPXGatMIVqDaeYDIgKAn4HKpCOTFw==
+
 stream-browserify@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/stream-browserify/-/stream-browserify-3.0.0.tgz"

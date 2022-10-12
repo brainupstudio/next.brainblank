@@ -1,35 +1,50 @@
-import Image from "next/image";
+import ComponentImage from "./library/image"
+import ComponentParagraph from "./library/paragraph"
+import ComponentSlideshow from "./library/slideshow"
+import ComponentTitle from "./library/title"
 
-const Components = (data, pageID) => {
+const Components = (componenets) => {
     return (
         <>
-            {data.data.map((component) => {
-                if (component.__component == "content.card") {
+            {componenets.data.map((component, index) => {
+                let wrappedInContainer = component.InContainer ? 'uk-container uk-container-expand' : ''
+
+                if (component.__component == "content.slideshow") {
                     return (
-                        <div key={component.id}>
-                            <h2>1 {component.Title}</h2>
+                        <div key={index} className={wrappedInContainer}>
+                            <ComponentSlideshow data={component} />
                         </div>
                     )
                 }
-                if (component.__component == "content.carousel") {
+                if (component.__component == "content.paragraph") {
                     return (
-                        <div key={component.id + '-' + pageID} className="uk-position-relative uk-visible-toggle uk-light" tabIndex="-1" uk-slideshow="true">
-
-                            <ul className="uk-slideshow-items">
-                                <li>
-                                    <Image src={'https://getuikit.com/docs/images/photo.jpg'} layout="fill" alt="" />
-                                </li>
-                                <li>
-                                    <Image src={'https://getuikit.com/docs/images/dark.jpg'} layout="fill" alt="" />
-                                </li>
-                                <li>
-                                    <Image src={'https://getuikit.com/docs/images/light.jpg'} layout="fill" alt="" />
-                                </li>
-                            </ul>
-
-                            <a className="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous="true" uk-slideshow-item="previous"></a>
-                            <a className="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next="true" uk-slideshow-item="next"></a>
-
+                        <ComponentParagraph
+                            key={index}
+                            data={component.Paragraph}
+                        />
+                    )
+                }
+                if (component.__component == "content.image") {
+                    return (
+                        <ComponentImage
+                            key={index}
+                            sizes={component.Image.data.attributes.formats}
+                            format={component}
+                            alt={component.Image.data.attributes.alternativeText}
+                        />
+                    )
+                }
+                if (component.__component == "content.title") {
+                    return (
+                        <div key={index}>
+                            <ComponentTitle data={component} />
+                        </div>
+                    )
+                }
+                if (component.__component == "content.card") {
+                    return (
+                        <div key={index}>
+                            <h2>1 {component.Title}</h2>
                         </div>
                     )
                 }
@@ -38,4 +53,4 @@ const Components = (data, pageID) => {
     )
 }
 
-export default Components;
+export default Components

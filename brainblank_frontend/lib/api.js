@@ -34,10 +34,10 @@ export async function getSinglePage(thisPageDataAttributes) {
 
 export async function getComponentsPage(thisPageDataAttributes) {
     const thisPage = await getSinglePage(thisPageDataAttributes);
-    const getObjectPage = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/pages/${thisPage.data.id}?populate=*`);
-    const getAllComponenets = getObjectPage.data.attributes.Dynamic;
+    const getObjectPage = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/pages/${thisPage.data.id}?populate=deep`);
+    const getAllComponents = getObjectPage.data.attributes.Dynamic;
 
-    return getAllComponenets;
+    return getAllComponents;
 }
 
 export async function getImagePage(thisPageDataAttributes, format) {
