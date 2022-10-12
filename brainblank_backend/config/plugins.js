@@ -196,5 +196,16 @@ module.exports = () => {
     'import-export-entries': {
       enabled: true,
     },
+    'vercel-deploy': {
+      enabled: true,
+      config: {
+        deployHook:
+          "https://api.vercel.com/v1/integrations/deploy/prj_UVBWnvORozFdSO7GiO5Uxi1RSPN4/0BXOagl3TO",
+        apiToken: "AaaNColZcOT0ExryNcFOcHwU",
+        appFilter: "strapi",
+        teamFilter: "originaljpag",
+        roles: ["strapi-super-admin", "strapi-editor", "strapi-author"],
+      },
+    },
   }
 }
