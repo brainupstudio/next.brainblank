@@ -1,6 +1,6 @@
 import "../node_modules/uikit/dist/css/uikit.min.css";
 import '../styles/globals.scss';
-import UIKit from "../components/uikit";
+import UIKit from "../components/UIKit";
 
 function MyApp({ Component, pageProps }) {
   return (
