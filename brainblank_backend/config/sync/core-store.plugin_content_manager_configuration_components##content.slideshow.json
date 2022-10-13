@@ -1,0 +1,174 @@
+{
+  "key": "plugin_content_manager_configuration_components::content.slideshow",
+  "value": {
+    "uid": "content.slideshow",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "id",
+      "defaultSortBy": "id",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "Slide": {
+        "edit": {
+          "label": "Slide",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Slide",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "Autoplay": {
+        "edit": {
+          "label": "Autoplay",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Autoplay",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "Animation": {
+        "edit": {
+          "label": "Animation",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Animation",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "MinHeight": {
+        "edit": {
+          "label": "MinHeight",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "MinHeight",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "MaxHeight": {
+        "edit": {
+          "label": "MaxHeight",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "MaxHeight",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "ViewportHeight": {
+        "edit": {
+          "label": "ViewportHeight",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "ViewportHeight",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "InContainer": {
+        "edit": {
+          "label": "InContainer",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "InContainer",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "Slide",
+        "Autoplay",
+        "Animation"
+      ],
+      "edit": [
+        [
+          {
+            "name": "Animation",
+            "size": 8
+          },
+          {
+            "name": "Autoplay",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "MinHeight",
+            "size": 4
+          },
+          {
+            "name": "MaxHeight",
+            "size": 4
+          },
+          {
+            "name": "ViewportHeight",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "Slide",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "InContainer",
+            "size": 12
+          }
+        ]
+      ],
+      "editRelations": []
+    },
+    "isComponent": true
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

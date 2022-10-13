@@ -1,0 +1,79 @@
+{
+  "key": "plugin_content_manager_configuration_components::content.image",
+  "value": {
+    "uid": "content.image",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "id",
+      "defaultSortBy": "id",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "Image": {
+        "edit": {
+          "label": "Image",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Image",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "Format": {
+        "edit": {
+          "label": "Format",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Format",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "Image",
+        "Format"
+      ],
+      "edit": [
+        [
+          {
+            "name": "Image",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "Format",
+            "size": 12
+          }
+        ]
+      ],
+      "editRelations": []
+    },
+    "isComponent": true
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

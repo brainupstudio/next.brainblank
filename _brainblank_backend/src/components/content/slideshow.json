@@ -1,0 +1,50 @@
+{
+  "collectionName": "components_content_slideshows",
+  "info": {
+    "displayName": "Slideshow",
+    "icon": "images",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Slide": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.card",
+      "min": 1,
+      "max": 10,
+      "required": true
+    },
+    "Autoplay": {
+      "type": "boolean",
+      "default": false
+    },
+    "Animation": {
+      "type": "enumeration",
+      "enum": [
+        "slide",
+        "fade",
+        "scale",
+        "pull",
+        "push"
+      ],
+      "default": "slide"
+    },
+    "MinHeight": {
+      "type": "integer",
+      "default": 300
+    },
+    "MaxHeight": {
+      "type": "integer",
+      "default": 600
+    },
+    "ViewportHeight": {
+      "type": "boolean",
+      "default": false
+    },
+    "InContainer": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

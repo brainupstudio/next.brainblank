@@ -1,0 +1,18 @@
+{
+  "key": "core_admin_project-settings",
+  "value": {
+    "menuLogo": {
+      "name": "logo-brainup.png",
+      "hash": "logo_brainup_da36949800",
+      "url": "/uploads/logo_brainup_da36949800.png",
+      "width": 500,
+      "height": 500,
+      "ext": ".png",
+      "size": 75.69,
+      "provider": "local"
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

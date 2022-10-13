@@ -1,5 +1,5 @@
 {
-  "name": "brainblank",
+  "name": "strapi-mysql",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -9,16 +9,16 @@
     "build": "strapi build",
     "strapi": "strapi"
   },
+  "devDependencies": {},
   "dependencies": {
     "@_sh/strapi-plugin-ckeditor": "^1.1.2",
-    "@ckeditor/ckeditor5-theme-lark": "^35.1.0",
-    "@strapi/plugin-i18n": "4.4.1",
-    "@strapi/plugin-users-permissions": "4.4.1",
-    "@strapi/strapi": "4.4.1",
-    "@vscode/sqlite3": "^5.0.8",
-    "better-sqlite3": "7.4.6",
+    "@ckeditor/ckeditor5-theme-lark": "^35.2.1",
+    "@strapi/plugin-i18n": "4.4.3",
+    "@strapi/plugin-users-permissions": "4.4.3",
+    "@strapi/strapi": "4.4.3",
+    "mysql": "2.18.1",
     "strapi-plugin-config-sync": "^1.0.4",
-    "strapi-plugin-import-export-entries": "^1.16.0",
+    "strapi-plugin-import-export-entries": "^1.16.1",
     "strapi-plugin-navigation": "^2.2.2",
     "strapi-plugin-populate-deep": "^1.0.1"
   },
@@ -26,10 +26,10 @@
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "30374307-1975-4f5a-8bd5-becf57171dc0"
+    "uuid": "a901eaef-5eb0-4bba-9141-a89ab1a889a3"
   },
   "engines": {
-    "node": ">=14.19.1 <=16.14.x",
+    "node": ">=14.19.1 <=16.x.x",
     "npm": ">=6.0.0"
   },
   "license": "MIT"

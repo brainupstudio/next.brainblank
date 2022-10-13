@@ -1,0 +1,49 @@
+{
+  "name": "Public",
+  "description": "Default role given to unauthenticated user.",
+  "type": "public",
+  "permissions": [
+    {
+      "action": "api::home-page.home-page.find"
+    },
+    {
+      "action": "api::page.page.find"
+    },
+    {
+      "action": "api::page.page.findOne"
+    },
+    {
+      "action": "plugin::content-type-builder.components.getComponents"
+    },
+    {
+      "action": "plugin::i18n.locales.listLocales"
+    },
+    {
+      "action": "plugin::navigation.client.render"
+    },
+    {
+      "action": "plugin::navigation.client.renderChild"
+    },
+    {
+      "action": "plugin::users-permissions.auth.callback"
+    },
+    {
+      "action": "plugin::users-permissions.auth.connect"
+    },
+    {
+      "action": "plugin::users-permissions.auth.emailConfirmation"
+    },
+    {
+      "action": "plugin::users-permissions.auth.forgotPassword"
+    },
+    {
+      "action": "plugin::users-permissions.auth.register"
+    },
+    {
+      "action": "plugin::users-permissions.auth.resetPassword"
+    },
+    {
+      "action": "plugin::users-permissions.auth.sendEmailConfirmation"
+    }
+  ]
+}

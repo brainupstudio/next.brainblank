@@ -1,0 +1,53 @@
+{
+  "collectionName": "components_content_cards",
+  "info": {
+    "displayName": "Card",
+    "icon": "address-card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": false
+    },
+    "Abstract": {
+      "type": "richtext"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Formats": {
+      "type": "enumeration",
+      "enum": [
+        "thumbnail",
+        "small",
+        "medium",
+        "large"
+      ]
+    },
+    "Overlay": {
+      "type": "enumeration",
+      "enum": [
+        "None",
+        "Light",
+        "Dark"
+      ],
+      "default": "None"
+    },
+    "TextColor": {
+      "type": "enumeration",
+      "enum": [
+        "Default",
+        "Light",
+        "Dark"
+      ],
+      "default": "Default"
+    }
+  }
+}
