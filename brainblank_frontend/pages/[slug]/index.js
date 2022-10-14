@@ -4,13 +4,15 @@ import {
   getNavigation,
   getSinglePage,
   getImagePage
-} from '../lib/api'
-import Layout from '../components/layout'
-import Components from '../components/components'
+} from '../../lib/api'
+import Layout from '../../components/layout'
+import Components from '../../components/components'
 import Image from 'next/image'
 import React from 'react'
 
 export default function Page({ page, navigation, components, image }) {
+  console.log(page)
+  debugger;
   return (
     <Layout navigation={navigation}>
       {image && <Image src={image.url} height={image.height} width={image.width} layout="fixed" alt="" />}
