@@ -11,8 +11,6 @@ import Image from 'next/image'
 import React from 'react'
 
 export default function Page({ page, navigation, components, image }) {
-  console.log(page)
-  debugger;
   return (
     <Layout navigation={navigation}>
       {image && <Image src={image.url} height={image.height} width={image.width} layout="fixed" alt="" />}
