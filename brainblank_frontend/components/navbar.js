@@ -44,7 +44,7 @@ const Navbar = ({ navigation }) => {
                                     return item;
                                 }
 
-                                if (page.type === 'INTERNAL' && page.parent === null) {
+                                if (page.type === 'INTERNAL' && page.parent === null && page.related.publishedAt != null) {
                                     item = (
                                         <li key={page.id}>
                                             <Link
