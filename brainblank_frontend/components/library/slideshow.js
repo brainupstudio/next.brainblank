@@ -1,5 +1,6 @@
 import Image from "next/image"
 import parse from 'html-react-parser'
+import styles from '../../styles/slideshow.module.scss'
 
 const ComponentSlideshow = (slide) => {
     const slides = slide.data.Slide
@@ -41,7 +42,7 @@ const ComponentSlideshow = (slide) => {
 
         //* Creation element lists
         // IMAGE slide
-        if (imageIsPresent) {   
+        if (imageIsPresent) {
             const getImageObject = item.Image.data.attributes
             let getImageFormat
             let getImageWidth
@@ -79,6 +80,7 @@ const ComponentSlideshow = (slide) => {
             return (
                 <li key={index}>
                     <Image
+                        className={styles.image}
                         src={getImage.url}
                         height={getImage.height}
                         width={getImage.width}
@@ -110,13 +112,13 @@ const ComponentSlideshow = (slide) => {
     })
 
     return (
-        <div className="uk-position-relative uk-visible-toggle" 
-            tabIndex="-1" 
-            uk-slideshow={'animation:' + slide.data.Animation + '; autoplay: ' + slide.data.Autoplay + 
-            '; min-height: ' + slide.data.MinHeight + '; max-height: ' + slide.data.MaxHeight + '; ' + viewportRatio}>
+        <div className="uk-position-relative uk-visible-toggle"
+            tabIndex="-1"
+            uk-slideshow={'animation:' + slide.data.Animation + '; autoplay: ' + slide.data.Autoplay +
+                '; min-height: ' + slide.data.MinHeight + '; max-height: ' + slide.data.MaxHeight + '; ' + viewportRatio}>
 
             {/* Variable List Container */}
-            {Boolean(slide.data.ViewportHeight) 
+            {Boolean(slide.data.ViewportHeight)
                 ? <ul className="uk-slideshow-items" uk-height-viewport={'min-height: ' + slide.data.MinHeight}>{innerItems}</ul>
                 : <ul className="uk-slideshow-items">{innerItems}</ul>}
 
