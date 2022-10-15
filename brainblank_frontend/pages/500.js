@@ -1,4 +1,4 @@
-import Layout from '../../components/layout'
+import Layout from '../components/layout'
 import { getNavigation } from '../lib/api';
 
 export default function Custom500() {
