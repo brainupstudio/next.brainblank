@@ -3,7 +3,7 @@ import { getNavigation } from '../lib/api';
 
 export default function Custom404() {
   return (
-    <Layout>
+    <Layout navigation={navigation}>
       <h1>PAGE NOT FOUND</h1>
     </Layout>
   )

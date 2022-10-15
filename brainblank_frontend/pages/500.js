@@ -3,7 +3,7 @@ import { getNavigation } from '../lib/api';
 
 export default function Custom500() {
   return (
-    <Layout>
+    <Layout navigation={navigation}>
       <h1>SERVER ERROR</h1>
     </Layout>
   )
