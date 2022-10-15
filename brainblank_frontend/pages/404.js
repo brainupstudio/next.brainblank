@@ -1,7 +1,7 @@
 import Layout from '../components/layout'
 import { getNavigation } from '../lib/api';
 
-export default function Custom404() {
+export default function Custom404({ navigation }) {
   return (
     <Layout navigation={navigation}>
       <h1>PAGE NOT FOUND</h1>
