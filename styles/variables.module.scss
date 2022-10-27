@@ -3,7 +3,7 @@
 // Description:     Defines common values which are used across all components
 //
 // ========================================================================
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;700&display=swap');
 
 // Load deprecated components
 // ========================================================================
@@ -38,7 +38,7 @@ $breakpoint-large-max:                          ($breakpoint-xlarge - 1) !defaul
 // Typography
 //
 
-$global-font-family:                             -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$global-font-family:                             "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $global-font-size:                               16px !default;
 $global-line-height:                             1.5 !default;      // 24px
 
@@ -48,12 +48,18 @@ $global-large-font-size:                         1.5rem !default;   // 24px
 $global-medium-font-size:                        1.25rem !default;  // 20px
 $global-small-font-size:                         0.875rem !default; // 14px
 
+$global-font-w-thin:                             100;
+$global-font-w-light:                            200;
+$global-font-w-regular:                          400;
+$global-font-w-bold:                             700;
+
+
 //
 // Colors
 //
 
 $global-color:                                   #666 !default;
-$global-emphasis-color:                          #333 !default;
+$global-emphasis-color:                          #000 !default;
 $global-muted-color:                             #999 !default;
 
 $global-link-color:                              #1e87f0 !default;
@@ -69,7 +75,7 @@ $global-background:                              #fff !default;
 
 $global-muted-background:                        #f8f8f8 !default;
 $global-primary-background:                      #1e87f0 !default;
-$global-secondary-background:                    #222 !default;
+$global-secondary-background:                    #000 !default;
 
 $global-success-background:                      #32d296 !default;
 $global-warning-background:                      #faa05a !default;
@@ -121,3 +127,70 @@ $global-control-large-height:                    55px !default;
 //
 
 $global-z-index:                                 1000 !default;
+//
+//:export {
+//    deprecated:                                  $deprecated;
+//
+//    breakpoint-small:                            $breakpoint-small;
+//    breakpoint-medium:                           $breakpoint-medium;
+//    breakpoint-large:                            $breakpoint-large;
+//    breakpoint-xlarge:                           $breakpoint-xlarge;
+//
+//    breakpoint-xsmall-max:                       $breakpoint-xsmall-max;
+//    breakpoint-small-max:                        $breakpoint-small-max;
+//    breakpoint-medium-max:                       $breakpoint-medium-max;
+//    breakpoint-large-max:                        $breakpoint-large-max;
+//
+//    global-font-family:                          $global-font-family;
+//    global-font-size:                            $global-font-size;
+//    global-line-height:                          $global-line-height;
+//
+//    global-2xlarge-font-size:                    $global-2xlarge-font-size;
+//    global-xlarge-font-size:                     $global-xlarge-font-size;
+//    global-large-font-size:                      $global-large-font-size;
+//    global-medium-font-size:                     $global-medium-font-size;
+//    global-small-font-size:                      $global-small-font-size;
+//
+//    global-color:                                $global-color;
+//    global-emphasis-color:                       $global-emphasis-color;
+//    global-muted-color:                          $global-muted-color;
+//
+//    global-link-color:                           $global-link-color;
+//    global-link-hover-color:                     $global-link-hover-color;
+//
+//    global-inverse-color:                        $global-inverse-color;
+//
+//    global-background:                           $global-background;
+//
+//    global-muted-background:                     $global-muted-background;
+//    global-primary-background:                   $global-primary-background;
+//    global-secondary-background:                 $global-secondary-background;
+//
+//    global-success-background:                   $global-success-background;
+//    global-warning-background:                   $global-warning-background;
+//    global-danger-background:                    $global-danger-background;
+//
+//    global-border-width:                         $global-border-width;
+//    global-border:                               $global-border;
+//
+//    global-small-box-shadow:                     $global-small-box-shadow;
+//    global-medium-box-shadow:                    $global-medium-box-shadow;
+//    global-large-box-shadow:                     $global-large-box-shadow;
+//    global-xlarge-box-shadow:                    $global-xlarge-box-shadow;
+//
+//    global-margin:                               $global-margin;
+//    global-small-margin:                         $global-small-margin;
+//    global-medium-margin:                        $global-medium-margin;
+//    global-large-margin:                         $global-large-margin;
+//    global-xlarge-margin:                        $global-xlarge-margin;
+//
+//    global-gutter:                               $global-gutter;
+//    global-small-gutter:                         $global-small-gutter;
+//    global-medium-gutter:                        $global-medium-gutter;
+//    global-large-gutter:                         $global-large-gutter;
+//
+//    global-control-height:                       $global-control-height;
+//    global-control-small-height:                 $global-control-small-height;
+//    global-control-large-height:                 $global-control-large-height;
+//    global-z-index:                              $global-z-index;
+//}

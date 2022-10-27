@@ -1,0 +1,11 @@
+@import "../styles/variables.module";
+//* Slideshow (Module)
+// ========================================================================
+
+.c_sl__image {
+    object-fit: cover;
+}
+
+.c_sl__title {
+    font-weight: $global-font-w-bold;
+}

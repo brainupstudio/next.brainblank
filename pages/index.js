@@ -1,23 +1,29 @@
-import { getAllPages, getNavigation } from '../lib/api'
-import Pages from '../components/pages'
-import Layout from '../components/layout'
+import {fetcher, getNavigation} from '../lib/api'
+import Layout from '../components/layout/layout'
+import LibraryComponents from "../components/libraryComponents";
+import '../styles/home.module.scss';
+import React from "react";
 
-export default function Home({ pages, navigation }) {
-  return (
-    <Layout navigation={navigation}>
-          <Pages pages={pages} />
-    </Layout>
-  )
+export default function Home({navigation, components, page}) {
+    return (
+        <Layout navigation={navigation} page={page}>
+            <div className="c_home">
+                <LibraryComponents data={components}></LibraryComponents>
+            </div>
+        </Layout>
+    )
 }
 
 export async function getStaticProps() {
-  const navResponse = await getNavigation(1);
-  const pagesResponse = await getAllPages();
+    const navResponse = await getNavigation();
+    const pageResponse = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/home-page`);
+    const componentsResponse = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/home-page/?populate=deep`);
 
-  return {
-    props: {
-      pages: pagesResponse,
-      navigation: navResponse
-    },
-  };
+    return {
+        props: {
+            navigation: navResponse,
+            components: componentsResponse.data.attributes.Dynamic,
+            page: pageResponse
+        },
+    };
 }

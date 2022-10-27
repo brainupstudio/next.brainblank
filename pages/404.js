@@ -1,4 +1,4 @@
-import Layout from '../components/layout'
+import Layout from '../components/layout/layout'
 import { getNavigation } from '../lib/api';
 
 export default function Custom404({ navigation }) {
@@ -10,7 +10,7 @@ export default function Custom404({ navigation }) {
 }
 
 export async function getStaticProps() {
-  const navResponse = await getNavigation(1);
+  const navResponse = await getNavigation();
 
   return {
     props: {

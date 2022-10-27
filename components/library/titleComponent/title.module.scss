@@ -1,0 +1,14 @@
+//* Title (Module)
+@import '../styles/variables.module';
+
+// ========================================================================
+.c_title {
+    //display: inline-block;
+    color: $global-emphasis-color;
+    font-weight: $global-font-w-bold;
+
+    //background: linear-gradient(45deg, #991eef, #1625e7);
+    //-webkit-background-clip: text;
+    //-webkit-text-fill-color: transparent;
+}
+

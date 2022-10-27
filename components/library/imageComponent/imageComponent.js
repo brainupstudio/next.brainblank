@@ -2,7 +2,7 @@ import Image from "next/image"
 
 const ComponentImage = (data) => {
     let image;
-    switch(data.format.Format) {
+    switch (data.format.Format) {
         case 'thumbnail':
             image = data.sizes.thumbnail
             break;
@@ -15,13 +15,15 @@ const ComponentImage = (data) => {
             image = data.sizes.large
     }
     return (
-        <Image
-            src={`${process.env.NEXT_PUBLIC_DOMAIN + image.url}`}
-            height={image.height}
-            width={image.width}
-            layout="fixed"
-            alt={data.alt}
-        />
+        <div className={'uk-container uk-container-large uk-margin-medium-bottom'}>
+            <Image
+                src={`${process.env.NEXT_PUBLIC_DOMAIN + image.url}`}
+                height={image.height}
+                width={image.width}
+                layout="fixed"
+                alt={data.alt}
+            />
+        </div>
     )
 
 }

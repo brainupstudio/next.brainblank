@@ -1,6 +1,6 @@
 import Image from "next/image"
 import parse from 'html-react-parser'
-import styles from '../../styles/slideshow.module.scss'
+import styles from './slideshow.module.scss'
 
 const ComponentSlideshow = (slide) => {
     const slides = slide.data.Slide
@@ -80,7 +80,7 @@ const ComponentSlideshow = (slide) => {
             return (
                 <li key={index}>
                     <Image
-                        className={styles.image}
+                        className={styles.c_sl__image}
                         src={getImage.url}
                         height={getImage.height}
                         width={getImage.width}
@@ -92,7 +92,7 @@ const ComponentSlideshow = (slide) => {
 
                     {contentIsPresent &&
                         <div className={textStyleClass + ' uk-position-center uk-position-small uk-text-center'}>
-                            {titleIsPresent && <h2 className="uk-margin-remove">{item.Title}</h2>}
+                            {titleIsPresent && <h2 className={styles.c_sl__title + ' uk-margin-remove'}>{item.Title}</h2>}
                             {abstractIsPresent && <div>{parse(item.Abstract)}</div>}
                         </div>
                     }
@@ -103,7 +103,7 @@ const ComponentSlideshow = (slide) => {
             return (
                 <li key={index}>
                     <div className={textStyleClass + ' uk-position-center uk-position-small uk-text-center'}>
-                        {item.Title && <h2 className="uk-margin-remove">{item.Title}</h2>}
+                        {item.Title && <h2 className={styles.c_sl__title + ' uk-margin-remove'}>{item.Title}</h2>}
                         {item.Abstract && <div>{parse(item.Abstract)}</div>}
                     </div>
                 </li>
@@ -112,7 +112,7 @@ const ComponentSlideshow = (slide) => {
     })
 
     return (
-        <div className="uk-position-relative uk-visible-toggle"
+        <div className="uk-position-relative uk-visible-toggle uk-margin-medium-bottom"
             tabIndex="-1"
             uk-slideshow={'animation:' + slide.data.Animation + '; autoplay: ' + slide.data.Autoplay +
                 '; min-height: ' + slide.data.MinHeight + '; max-height: ' + slide.data.MaxHeight + '; ' + viewportRatio}>
@@ -122,8 +122,8 @@ const ComponentSlideshow = (slide) => {
                 ? <ul className="uk-slideshow-items" uk-height-viewport={'min-height: ' + slide.data.MinHeight}>{innerItems}</ul>
                 : <ul className="uk-slideshow-items">{innerItems}</ul>}
 
-            <a className="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous="true" uk-slideshow-item="previous"></a>
-            <a className="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next="true" uk-slideshow-item="next"></a>
+            <a className="uk-position-center-left uk-position-small uk-hidden-hover" href="components/library/slideshowComponent/slideshow#slideshowComponent.js" uk-slidenav-previous="true" uk-slideshow-item="previous"></a>
+            <a className="uk-position-center-right uk-position-small uk-hidden-hover" href="components/library/slideshowComponent/slideshow#slideshowComponent.js" uk-slidenav-next="true" uk-slideshow-item="next"></a>
         </div>
     )
 }
