@@ -1,12 +1,13 @@
 import parse from 'html-react-parser'
+import StaticVars from "../../../lib/static";
 
-const ComponentParagraph = (text) => {
+const ComponentParagraph = (component) => {
     //* Color
     let colorText = ()=> {
-        const color = text.data.Color;
+        const color = component.data.Color;
         if (color !== null) {
             return (<style global jsx>{`
-                .global_text {
+                .thisParagraphColor_${component.index} {
                     color: ${color}!important;
                 }
             `}</style>)
@@ -18,8 +19,8 @@ const ComponentParagraph = (text) => {
     return (
         <>
             {colorText()}
-            <div className={'uk-container uk-container-large uk-margin-medium-bottom global_text'}>
-                {parse(text.data.Paragraph)}
+            <div className={StaticVars.container + 'uk-margin-medium-bottom thisParagraphColor_' + component.index}>
+                {parse(component.data.Paragraph)}
             </div>
         </>
     )

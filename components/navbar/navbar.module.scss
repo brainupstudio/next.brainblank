@@ -4,13 +4,11 @@
 
 .c_navbar.c_navbar {
     position: fixed;
-    top: $global-small-margin;
-    left: $global-medium-margin;
-    right: $global-medium-margin;
-    padding: 0 $global-margin;
-    border-radius: .3rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 $global-medium-gutter;
     background: transparent;
-    backdrop-filter: blur(0);
     z-index: 99;
 
     a {
