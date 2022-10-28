@@ -12,14 +12,13 @@ import React from 'react'
 
 export default function Page({ page, navigation, components, image }) {
   return (
-    <Layout navigation={navigation} page={page}>
+    <Layout navigation={navigation} page={page.data.attributes.Title}>
       {image && <Image src={image.url} height={image.height} width={image.width} layout="fixed" alt="" />}
       {/*{page.data.attributes.Title !== null ? <h1>{page.data.attributes.Title}</h1> : false}*/}
       <LibraryComponents data={components}></LibraryComponents>
     </Layout>
   )
 }
-
 
 export async function getStaticPaths() {
   const pageResponse = await getAllPages();

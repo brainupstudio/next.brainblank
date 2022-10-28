@@ -5,7 +5,7 @@ import styles from './layout.module.scss'
 const Layout = ({ children, navigation, page}) => {
   return (
     <>
-      <Navbar navigation={navigation} page={{page}} />
+      <Navbar navigation={navigation} page={page} />
         <div className={styles.container}>
           <main className={styles.layout}>
             <main>{children}</main>

@@ -6,7 +6,7 @@ import React from "react";
 
 export default function Home({navigation, components, page}) {
     return (
-        <Layout navigation={navigation} page={page}>
+        <Layout navigation={navigation} page={page.data.attributes.Title}>
             <div className="c_home">
                 <LibraryComponents data={components}></LibraryComponents>
             </div>
