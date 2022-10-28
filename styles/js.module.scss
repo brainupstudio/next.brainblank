@@ -2,16 +2,13 @@
 // ========================================================================
 
 .js-navbar {
-    transition: background-color, backdrop-filter .8s ease-in-out;
+    transition: background-color .3s ease-in-out;
 
     &.isScrolled {
-        backdrop-filter: blur(4px)!important;
-        background: rgba($global-background, .7) !important;
-        box-shadow: $global-small-box-shadow;
+        background: $global-secondary-background !important;
 
         a {
             transition: background-color, backdrop-filter .8s ease-in-out;
-            color: $global-emphasis-color!important;
         }
     }
 }
