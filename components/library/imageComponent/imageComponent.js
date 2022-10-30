@@ -18,10 +18,10 @@ const ComponentImage = (data) => {
     return (
         <div className={StaticVars.container + 'uk-margin-medium-bottom'}>
             <Image
-                src={`${process.env.NEXT_PUBLIC_DOMAIN + image.url}`}
+                src={`${process.env.NEXT_PUBLIC_STRAPI_DOMAIN + image.url}`}
                 height={image.height}
                 width={image.width}
-                //layout="fixed"
+                layout="fixed"
                 alt={data.alt}
             />
         </div>

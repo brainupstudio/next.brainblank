@@ -72,7 +72,7 @@ const ComponentSlideshow = (slide) => {
             }
 
             const getImage = {
-                url: process.env.NEXT_PUBLIC_DOMAIN + getImageFormat.url,
+                url: process.env.NEXT_PUBLIC_STRAPI_DOMAIN + getImageFormat.url,
                 width: getImageWidth,
                 height: getImageHeight,
             };
