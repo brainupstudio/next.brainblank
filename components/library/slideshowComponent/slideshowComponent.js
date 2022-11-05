@@ -82,8 +82,8 @@ const ComponentSlideshow = (slide) => {
                     <Image
                         className={styles.c_sl__image}
                         src={getImage.url}
-                        height={getImage.height}
-                        width={getImage.width}
+                        //height={getImage.height}
+                        //width={getImage.width}
                         layout="fill"
                         alt={alt}
                     />

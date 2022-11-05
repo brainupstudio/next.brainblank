@@ -8,7 +8,7 @@ export default function Home({ settings, navigation, components, thisPage }) {
     return (
         <Layout navigation={navigation} settings={settings} thisPage={thisPage.data}>
             <div className="c_home">
-                <LibraryComponents data={components}></LibraryComponents>
+                <LibraryComponents data={components} thisPage={thisPage.data}></LibraryComponents>
             </div>
         </Layout>
     )
