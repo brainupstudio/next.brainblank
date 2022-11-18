@@ -8,15 +8,24 @@ import StaticVars from "../../lib/static";
 
 export default function Navbar({navigation, thisPage, settings}) {
    useEffect(() => {
+      const linkToggler = document.querySelectorAll('.js-toggle');
       window.addEventListener('scroll', handleScroll);
       return () => {
-         window.removeEventListener('scroll', handleScroll)
+         window.removeEventListener('scroll', handleScroll);
+         linkToggler.forEach((el)=> {
+            el.addEventListener('click', e=> sidenavToggle());
+         })
       }
    })
    const handleScroll = () => {
       document.querySelector('.js-navbar')
          .classList.toggle('isScrolled', scrollY >= 100)
    }
+   const sidenavToggle = () => {
+      const uikit = require("uikit");
+      uikit.offcanvas('#sidenav').hide();
+   }
+
    let metaTitle = `${null !== settings.seo.metaTitle ? settings.seo.metaTitle : false}${undefined !== thisPage.attributes ? ' | ' + thisPage.attributes.Title : false}`;
 
    return (
@@ -162,15 +171,36 @@ export default function Navbar({navigation, thisPage, settings}) {
 
          <div id="sidenav" uk-offcanvas="mode: slide" className="uk-offcanvas uk-hidden@m">
             <div className="uk-offcanvas-bar">
+               <div className={styles.c_navbar__logo}>
+                  <Image
+                     src={settings.logo.url}
+                     height={settings.logo.height}
+                     width={settings.logo.width}
+                     ayout="fixed"
+                     alt=""
+                  />
+               </div>
                <ul className="uk-nav">
                   {navigation && navigation.map((page) => {
                      let item;
+                     let homeItem
+                     if (page.path === '/') {
+                        homeItem = (
+                           <li key={page.id}>
+                              <Link href="/">
+                                 <a className="js-toggle">{page.title}</a>
+                              </Link>
+                           </li>
+                        )
+                        return homeItem;
+                     }
                      if (page.path !== '/') {
 
                         if (page.type === 'EXTERNAL' && page.parent === null) {
                            item = (
                               <li key={page.id}>
-                                 <a href={page.externalPath}>
+                                 <a className="js-toggle"
+                                    href={page.externalPath}>
                                     {page.title}
                                  </a>
                               </li>
@@ -191,7 +221,7 @@ export default function Navbar({navigation, thisPage, settings}) {
                                           },
                                        }}
                                     >
-                                       <a className={thisPage.attributes.Title === page.title ? styles.isActive : 'false'}>{page.title}</a>
+                                       <a className={thisPage.attributes.Title === page.title ? styles.isActive : 'false' + ' js-toggle'}>{page.title}</a>
                                     </Link>
                                  </li>
                               )
@@ -231,7 +261,7 @@ export default function Navbar({navigation, thisPage, settings}) {
                                                          }}
                                                          as={`/${subpage.parent.path}/${subpage.related.slug}`}
                                                       >
-                                                         <a>{subpage.title}</a>
+                                                         <a className="js-toggle">{subpage.title}</a>
                                                       </Link>
                                                    </li>
                                                 )
