@@ -21,7 +21,7 @@ const ComponentImage = (data) => {
                 src={`${process.env.NEXT_PUBLIC_STRAPI_DOMAIN + image.url}`}
                 height={image.height}
                 width={image.width}
-                layout="fixed"
+                fill="true"
                 alt={data.alt}
             />
         </div>

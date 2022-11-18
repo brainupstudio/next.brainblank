@@ -23,7 +23,8 @@ export default function Navbar({navigation, thisPage, settings}) {
       <>
          <Head>
             <title>{metaTitle}</title>
-            <meta name="description" content={null !== settings.seo.metaDescription ? settings.seo.metaDescription : 'false'}/>
+            <meta name="description"
+                  content={null !== settings.seo.metaDescription ? settings.seo.metaDescription : 'false'}/>
             <link rel="canonical" href=""/>
             <link rel="icon" href="/favicon.ico"/>
          </Head>
@@ -63,7 +64,9 @@ export default function Navbar({navigation, thisPage, settings}) {
                </div>
 
                <div className="uk-navbar-right">
-                  <ul className="uk-navbar-nav">
+                  <a className="uk-navbar-toggle uk-navbar-toggle-animate uk-hidden@m" uk-navbar-toggle-icon="true"
+                     uk-toggle="target: #sidenav" href="#"></a>
+                  <ul className="uk-navbar-nav uk-visible@m">
                      {navigation && navigation.map((page) => {
                         let item;
                         if (page.path !== '/') {
@@ -82,7 +85,8 @@ export default function Navbar({navigation, thisPage, settings}) {
                            if (page.type === 'INTERNAL' && page.parent === null && page.related !== null) {
                               if (page.related.publishedAt !== null) {
                                  item = (
-                                    <li key={page.id} className={thisPage.attributes.Title === page.title ? 'uk-active' : 'false'}>
+                                    <li key={page.id}
+                                        className={thisPage.attributes.Title === page.title ? 'uk-active' : 'false'}>
                                        <Link
                                           key={page.id}
                                           href={{
@@ -152,12 +156,102 @@ export default function Navbar({navigation, thisPage, settings}) {
                         }
                      })}
                   </ul>
-
                </div>
             </motion.nav>
             {/*</div>*/}
          </AnimatePresence>
 
+         <div id="sidenav" uk-offcanvas="mode: slide" className="uk-offcanvas uk-hidden@m">
+            <div className="uk-offcanvas-bar">
+               <ul className="uk-nav">
+                  {navigation && navigation.map((page) => {
+                     let item;
+                     if (page.path !== '/') {
+
+                        if (page.type === 'EXTERNAL' && page.parent === null) {
+                           item = (
+                              <li key={page.id}>
+                                 <a href={page.externalPath}>
+                                    {page.title}
+                                 </a>
+                              </li>
+                           )
+                           return item;
+                        }
+
+                        if (page.type === 'INTERNAL' && page.parent === null && page.related !== null) {
+                           if (page.related.publishedAt !== null) {
+                              item = (
+                                 <li key={page.id}
+                                     className={thisPage.attributes.Title === page.title ? 'uk-active' : 'false'}>
+                                    <Link
+                                       key={page.id}
+                                       href={{
+                                          pathname: '/[slug]',
+                                          query: {
+                                             slug: page.related.slug
+                                          },
+                                       }}
+                                    >
+                                       <a>{page.title}</a>
+                                    </Link>
+                                 </li>
+                              )
+                              return item;
+                           }
+                        }
+
+                        if (page.type === 'WRAPPER') {
+                           item = (
+                              <li key={page.id}>
+                                 <span>{page.title}</span>
+                                 <ul className={styles.c_navbar__sublevel}>
+                                    {navigation && navigation.map((subpage) => {
+                                       if (subpage.parent !== null) {
+                                          if (subpage.parent.id === page.id) {
+                                             if (subpage.type === 'EXTERNAL') {
+                                                item = (
+                                                   <li key={subpage.id}>
+                                                      <a href={subpage.externalPath}>
+                                                         {subpage.title}
+                                                      </a>
+                                                   </li>
+                                                )
+                                                return item;
+                                             }
+
+                                             if (subpage.type === 'INTERNAL') {
+                                                item = (
+                                                   <li key={subpage.id}>
+                                                      <Link
+                                                         key={subpage.id}
+                                                         href={{
+                                                            pathname: '/[slug]',
+                                                            query: {
+                                                               slug: subpage.related.slug
+                                                            },
+                                                         }}
+                                                         as={`/${subpage.parent.path}/${subpage.related.slug}`}
+                                                      >
+                                                         <a>{subpage.title}</a>
+                                                      </Link>
+                                                   </li>
+                                                )
+                                                return item
+                                             }
+                                          }
+                                       }
+                                    })}
+                                 </ul>
+                              </li>
+                           )
+                           return item;
+                        }
+                     }
+                  })}
+               </ul>
+            </div>
+         </div>
       </>
    )
 }

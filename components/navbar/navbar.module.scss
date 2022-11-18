@@ -14,5 +14,14 @@
     a {
         color: $global-inverse-color;
     }
+
+    @media screen and (max-width: $breakpoint-small-max){
+        padding: 0 $global-gutter;
+    }
+}
+
+.c_navbar__sublevel {
+    margin-left: $global-small-margin!important;
+    margin-bottom: $global-small-margin!important;
 }
 
