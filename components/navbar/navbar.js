@@ -85,8 +85,7 @@ export default function Navbar({navigation, thisPage, settings}) {
                            if (page.type === 'INTERNAL' && page.parent === null && page.related !== null) {
                               if (page.related.publishedAt !== null) {
                                  item = (
-                                    <li key={page.id}
-                                        className={thisPage.attributes.Title === page.title ? 'uk-active' : 'false'}>
+                                    <li key={page.id}>
                                        <Link
                                           key={page.id}
                                           href={{
@@ -96,7 +95,7 @@ export default function Navbar({navigation, thisPage, settings}) {
                                              },
                                           }}
                                        >
-                                          <a>{page.title}</a>
+                                          <a className={thisPage.attributes.Title === page.title ? styles.isActive : 'false'}>{page.title}</a>
                                        </Link>
                                     </li>
                                  )
@@ -182,8 +181,7 @@ export default function Navbar({navigation, thisPage, settings}) {
                         if (page.type === 'INTERNAL' && page.parent === null && page.related !== null) {
                            if (page.related.publishedAt !== null) {
                               item = (
-                                 <li key={page.id}
-                                     className={thisPage.attributes.Title === page.title ? 'uk-active' : 'false'}>
+                                 <li key={page.id}>
                                     <Link
                                        key={page.id}
                                        href={{
@@ -193,7 +191,7 @@ export default function Navbar({navigation, thisPage, settings}) {
                                           },
                                        }}
                                     >
-                                       <a>{page.title}</a>
+                                       <a className={thisPage.attributes.Title === page.title ? styles.isActive : 'false'}>{page.title}</a>
                                     </Link>
                                  </li>
                               )
