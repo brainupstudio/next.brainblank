@@ -1,6 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🧠 BrainBlank project – Strapi + Next.js
 
-## Getting Started
+The power of Strapi as a backend and the versatility of Next.js for the frontend are the basis of this project.
+The backend project can be found [here](https://github.com/brainupstudio/strapi.brainblank)
+
+## Project settings
+Create .env file on root folder and set these variables.
+
+```
+# PUBLIC
+NEXT_PUBLIC_STRAPI_DOMAIN='http://localhost:1337'
+NEXT_PUBLIC_NAVIGATION_ID=1 (Your main Navigation ID)
+
+# PRIVATE
+API_STRAPI_PUBLIC_URL='$NEXT_PUBLIC_STRAPI_DOMAIN/api'
+PRODUCTION_IMAGES_HOSTNAME='https:...' (Optional if images are hosted in different place than Strapi)
+```
+
+## Getting Started with Next.js
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 First, run the development server:
 

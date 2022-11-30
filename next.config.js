@@ -18,10 +18,6 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'lobster-app-o4gva.ondigitalocean.app',
-      },
-      {
-        protocol: 'https',
         hostname: `${process.env.PRODUCTION_IMAGES_HOSTNAME}`,
       },
     ],
