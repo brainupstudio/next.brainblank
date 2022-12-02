@@ -5,6 +5,7 @@ import '../styles/home.module.scss';
 import React from "react";
 
 export default function Home({ settings, navigation, components, thisPage }) {
+    
     return (
         <Layout navigation={navigation} settings={settings} thisPage={thisPage.data}>
             <div className="c_home">
