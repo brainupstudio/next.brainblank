@@ -22,14 +22,14 @@ const nextConfig = {
       },
     ],
   },
-  async rewrites() {
-    return [
-      {
-        source: '/:node/:slug',
-        destination: '/:slug',
-      }
-    ]
-  },
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: '/:node/:slug',
+  //       destination: '/:slug',
+  //     }
+  //   ]
+  // },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   }

@@ -2,7 +2,7 @@
 // ========================================================================
 
 .js-navbar {
-    transition: background-color .3s ease-in-out;
+    transition: background-color .6s ease-in-out;
 
     &.isScrolled {
         background: $global-secondary-background !important;

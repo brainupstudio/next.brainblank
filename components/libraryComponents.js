@@ -4,6 +4,7 @@ import ComponentSlideshow from "./library/slideshowComponent/slideshowComponent"
 import ComponentTitle from "./library/titleComponent/titleComponent"
 import ComponentBlock from "./library/blockComponent/blockComponent";
 import ComponentEmptySpace from "./library/emptySpaceComponent/emptySpaceComponent";
+import ComponentRepeater from "./library/repeaterComponent/repeaterComponent";
 import StaticVars from "../lib/static";
 import {AnimatePresence, motion} from "framer-motion"
 
@@ -43,6 +44,7 @@ const LibraryComponents = (componenets) => {
                         sizes={component.Image.data.attributes.formats}
                         format={component}
                         alt={component.Image.data.attributes.alternativeText}
+                        wrapped={true}
                      />
                   )
                }
@@ -70,6 +72,11 @@ const LibraryComponents = (componenets) => {
                if (component.__component === "content.empty-space") {
                   return (
                      <ComponentEmptySpace key={index} data={component} index={index}/>
+                  )
+               }
+               if (component.__component === "content.repeater") {
+                  return (
+                     <ComponentRepeater key={index} data={component} index={index}/>
                   )
                }
             })}

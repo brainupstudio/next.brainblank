@@ -9,22 +9,29 @@ import {
 import Layout from '../../components/layout/layout'
 import LibraryComponents from '../../components/libraryComponents'
 import Image from 'next/image'
+import StaticVars from "../../lib/static"
+import styles from './index.module.scss'
+
 
 export default function Page({settings, thisPage, navigation, components, image}) {
    return (
       <Layout navigation={navigation} settings={settings} thisPage={thisPage.data}>
-         {image && <Image src={image.url} height={image.height} width={image.width} layout="fixed" alt=""/>}
+         <div className={styles.c_news}></div>
+
+         <div className={StaticVars.container + 'uk-margin-medium-bottom'}>
+            {image && <Image src={image.url} height={image.height} width={image.width} layout="fixed" alt=""/>}
+            {thisPage.data.attributes.Title !== null ? <h1>{thisPage.data.attributes.Title}</h1> : false}
+         </div>
          <LibraryComponents data={components} thisPage={thisPage.data}></LibraryComponents>
-         {/*{console.log(collection)}*/}
       </Layout>
    )
 }
 
 export async function getStaticPaths() {
-   const pageResponse = await getAllPages('pages');
+   const pageResponse = await getAllPages('news');
    const paths = pageResponse.map((thisPage) => ({
       params: {
-         slug: thisPage.attributes.slug.toString()
+         slug: thisPage.attributes.slug.toString(),
       },
    }))
 
@@ -34,10 +41,9 @@ export async function getStaticPaths() {
 export async function getStaticProps({params}) { //context?
    const settingsResponse = await getSiteSettings();
    const navResponse = await getNavigation();
-   const pageResponse = await getSinglePage(params, 'pages');
-   const imageResponse = await getImagePage(pageResponse.data.attributes, 'large', 'pages');
-   const componentsResponse = await getComponentsPage(pageResponse.data.attributes, 'pages');
-   //const collectionResponse = await getCollectionLoop('news');
+   const pageResponse = await getSinglePage(params, 'news');
+   const imageResponse = await getImagePage(pageResponse.data.attributes, 'large', 'news');
+   const componentsResponse = await getComponentsPage(pageResponse.data.attributes, 'news');
 
    return {
       props: {
@@ -45,8 +51,7 @@ export async function getStaticProps({params}) { //context?
          navigation: navResponse,
          thisPage: pageResponse,
          components: componentsResponse,
-         image: imageResponse,
-         //collection: collectionResponse,
+         image: imageResponse
       },
    };
 }

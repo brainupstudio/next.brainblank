@@ -1,0 +1,26 @@
+//* Repeater (Module)
+@import '../styles/variables.module';
+
+// ========================================================================
+
+.c_repeater {
+    display: flex;
+    gap: $global-small-gutter;
+}
+
+.c_repeater__item {
+    display: block;
+    width: 100%;
+    padding: $global-small-gutter;
+    border: solid $global-border-width $global-border;
+    color: $global-emphasis-color;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all .6s ease-in-out;
+
+    &:hover {
+        color: $global-emphasis-color;
+        text-decoration: none;
+        border-color: $global-emphasis-color;
+    }
+}

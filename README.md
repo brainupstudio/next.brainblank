@@ -12,7 +12,7 @@ NEXT_PUBLIC_STRAPI_DOMAIN='http://localhost:1337'
 NEXT_PUBLIC_NAVIGATION_ID=1 (Your main Navigation ID)
 
 # PRIVATE
-API_STRAPI_PUBLIC_URL='$NEXT_PUBLIC_STRAPI_DOMAIN/api'
+NEXT_PUBLIC_STRAPI_API='$NEXT_PUBLIC_STRAPI_DOMAIN/api'
 PRODUCTION_IMAGES_HOSTNAME='https:...' (Optional if images are hosted in different place than Strapi)
 ```
 

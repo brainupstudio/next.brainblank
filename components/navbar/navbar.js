@@ -13,13 +13,13 @@ export default function Navbar({navigation, thisPage, settings}) {
       return () => {
          window.removeEventListener('scroll', handleScroll);
          linkToggler.forEach((el)=> {
-            el.addEventListener('click', e=> sidenavToggle());
+            el.addEventListener('click', ()=> sidenavToggle());
          })
       }
    })
    const handleScroll = () => {
       document.querySelector('.js-navbar')
-         .classList.toggle('isScrolled', scrollY >= 100)
+         .classList.toggle('isScrolled', scrollY >= 80)
    }
    const sidenavToggle = () => {
       const uikit = require("uikit");
@@ -54,9 +54,7 @@ export default function Navbar({navigation, thisPage, settings}) {
                      let homeItem
                      if (homePage.path === '/') {
                         homeItem = (
-                           <Link href="/" key={homePage.id}>
-                              <a className='uk-navbar-item uk-logo'
-                              >
+                           <Link href="/" key={homePage.id} className='uk-navbar-item uk-logo'>
                                  {settings.logo && <Image
                                     src={settings.logo.url}
                                     height={settings.logo.height}
@@ -64,7 +62,6 @@ export default function Navbar({navigation, thisPage, settings}) {
                                     ayout="fixed"
                                     alt=""
                                  />}
-                              </a>
                            </Link>
                         )
                         return homeItem;
@@ -97,14 +94,14 @@ export default function Navbar({navigation, thisPage, settings}) {
                                     <li key={page.id}>
                                        <Link
                                           key={page.id}
+                                          className={thisPage.attributes.Title === page.title ? styles.isActive : 'false'}
                                           href={{
                                              pathname: '/[slug]',
                                              query: {
                                                 slug: page.related.slug
                                              },
-                                          }}
-                                       >
-                                          <a className={thisPage.attributes.Title === page.title ? styles.isActive : 'false'}>{page.title}</a>
+                                          }}>
+                                          {page.title}
                                        </Link>
                                     </li>
                                  )
@@ -144,9 +141,8 @@ export default function Navbar({navigation, thisPage, settings}) {
                                                                      slug: subpage.related.slug
                                                                   },
                                                                }}
-                                                               as={`/${subpage.parent.path}/${subpage.related.slug}`}
-                                                            >
-                                                               <a>{subpage.title}</a>
+                                                               as={`/${subpage.parent.path}/${subpage.related.slug}`}>
+                                                               {subpage.title}
                                                             </Link>
                                                          </li>
                                                       )
@@ -187,8 +183,8 @@ export default function Navbar({navigation, thisPage, settings}) {
                      if (page.path === '/') {
                         homeItem = (
                            <li key={page.id}>
-                              <Link href="/">
-                                 <a className="js-toggle">{page.title}</a>
+                              <Link href="/" className="js-toggle">
+                                 {page.title}
                               </Link>
                            </li>
                         )
@@ -214,14 +210,14 @@ export default function Navbar({navigation, thisPage, settings}) {
                                  <li key={page.id}>
                                     <Link
                                        key={page.id}
+                                       className={thisPage.attributes.Title === page.title ? styles.isActive : 'false' + ' js-toggle'}
                                        href={{
                                           pathname: '/[slug]',
                                           query: {
                                              slug: page.related.slug
                                           },
-                                       }}
-                                    >
-                                       <a className={thisPage.attributes.Title === page.title ? styles.isActive : 'false' + ' js-toggle'}>{page.title}</a>
+                                       }}>
+                                       {page.title}
                                     </Link>
                                  </li>
                               )
@@ -253,15 +249,15 @@ export default function Navbar({navigation, thisPage, settings}) {
                                                    <li key={subpage.id}>
                                                       <Link
                                                          key={subpage.id}
+                                                         className="js-toggle"
                                                          href={{
                                                             pathname: '/[slug]',
                                                             query: {
                                                                slug: subpage.related.slug
                                                             },
                                                          }}
-                                                         as={`/${subpage.parent.path}/${subpage.related.slug}`}
-                                                      >
-                                                         <a className="js-toggle">{subpage.title}</a>
+                                                         as={`/${subpage.parent.path}/${subpage.related.slug}`}>
+                                                         {subpage.title}
                                                       </Link>
                                                    </li>
                                                 )

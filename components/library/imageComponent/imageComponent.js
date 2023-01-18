@@ -15,18 +15,30 @@ const ComponentImage = (data) => {
         default:
             image = data.sizes.large
     }
-    return (
-        <div className={StaticVars.container + 'uk-margin-medium-bottom'}>
-            <Image
-                src={`${process.env.NEXT_PUBLIC_STRAPI_DOMAIN + image.url}`}
-                height={image.height}
-                width={image.width}
-                fill="true"
-                alt={data.alt}
-            />
-        </div>
-    )
-
+    console.log(data.wrapped)
+    if (data.wrapped) {
+        return (
+            <div className={StaticVars.container + 'uk-margin-medium-bottom'}>
+                <Image
+                    src={`${process.env.NEXT_PUBLIC_STRAPI_DOMAIN + image.url}`}
+                    height={image.height}
+                    width={image.width}
+                    //fill="true"
+                    alt={data.alt}
+                />
+            </div>
+        )
+    } else {
+        return (
+           <Image
+              src={`${process.env.NEXT_PUBLIC_STRAPI_DOMAIN + image.url}`}
+              height={image.height}
+              width={image.width}
+              //fill="true"
+              alt={data.alt}
+           />
+        )
+    }
 }
 
 export default ComponentImage

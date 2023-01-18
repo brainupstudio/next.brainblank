@@ -18,8 +18,8 @@ export default function Home({ settings, navigation, components, thisPage }) {
 export async function getStaticProps() {
     const settingsResponse = await getSiteSettings();
     const navResponse = await getNavigation();
-    const pageResponse = await fetcher(`${process.env.API_STRAPI_PUBLIC_URL}/home-page`);
-    const componentsResponse = await fetcher(`${process.env.API_STRAPI_PUBLIC_URL}/home-page/?populate=deep`);
+    const pageResponse = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_API}/home-page`);
+    const componentsResponse = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_API}/home-page/?populate=deep`);
 
     return {
         props: {
