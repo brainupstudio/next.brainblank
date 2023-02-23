@@ -4,7 +4,7 @@ import {
    getComponentsPage,
    getNavigation,
    getSinglePage,
-   getImagePage, getSiteSettings, getCollectionLoop
+   getImagePage, getSiteSettings
 } from '../../lib/api'
 import Layout from '../../components/layout/layout'
 import LibraryComponents from '../../components/libraryComponents'

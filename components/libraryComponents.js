@@ -7,12 +7,13 @@ import ComponentEmptySpace from "./library/emptySpaceComponent/emptySpaceCompone
 import ComponentRepeater from "./library/repeaterComponent/repeaterComponent";
 import StaticVars from "../lib/static";
 import {AnimatePresence, motion} from "framer-motion"
+import { v4 as uuidv4 } from 'uuid';
 
 const LibraryComponents = (componenets) => {
    return (
       <AnimatePresence exitBeforeEnter>
          <motion.div
-            key={componenets.thisPage.attributes.Title}
+            key={uuidv4()}
             variants={StaticVars.motionFade}
             initial='initial'
             animate='animate'
@@ -23,7 +24,7 @@ const LibraryComponents = (componenets) => {
 
                if (component.__component === "content.slideshow") {
                   return (
-                     <div key={index} className={wrappedInContainer}>
+                     <div key={uuidv4()} className={wrappedInContainer}>
                         <ComponentSlideshow data={component}/>
                      </div>
                   )
@@ -31,7 +32,7 @@ const LibraryComponents = (componenets) => {
                if (component.__component === "content.paragraph") {
                   return (
                      <ComponentParagraph
-                        key={index}
+                        key={uuidv4()}
                         data={component}
                         index={index}
                      />
@@ -40,7 +41,7 @@ const LibraryComponents = (componenets) => {
                if (component.__component === "content.image") {
                   return (
                      <ComponentImage
-                        key={index}
+                        key={uuidv4()}
                         sizes={component.Image.data.attributes.formats}
                         format={component}
                         alt={component.Image.data.attributes.alternativeText}
@@ -50,33 +51,33 @@ const LibraryComponents = (componenets) => {
                }
                if (component.__component === "content.title") {
                   return (
-                     <div key={index}>
+                     <div key={uuidv4()}>
                         <ComponentTitle data={component} index={index}/>
                      </div>
                   )
                }
                if (component.__component === "content.block") {
                   return (
-                     <div key={index}>
+                     <div key={uuidv4()}>
                         <ComponentBlock data={component} index={index}/>
                      </div>
                   )
                }
                if (component.__component === "content.card") {
                   return (
-                     <div key={index}>
+                     <div key={uuidv4()}>
                         <h2>1 {component.Title}</h2>
                      </div>
                   )
                }
                if (component.__component === "content.empty-space") {
                   return (
-                     <ComponentEmptySpace key={index} data={component} index={index}/>
+                     <ComponentEmptySpace key={uuidv4()} data={component} index={index}/>
                   )
                }
                if (component.__component === "content.repeater") {
                   return (
-                     <ComponentRepeater key={index} data={component} index={index}/>
+                     <ComponentRepeater key={uuidv4()} data={component} index={index}/>
                   )
                }
             })}

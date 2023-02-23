@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+.uk-container-large {
+    max-width: $breakpoint-large;
+}
+
 .uk-navbar-item {
     min-height: 100px;
 }

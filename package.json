@@ -17,7 +17,8 @@
     "react-dom": "18.2.0",
     "sass": "^1.57.1",
     "swr": "^2.0.0",
-    "uikit": "^3.15.20"
+    "uikit": "^3.15.20",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "eslint": "8.31.0",
