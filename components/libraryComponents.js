@@ -45,6 +45,7 @@ const LibraryComponents = (componenets) => {
                         sizes={component.Image.data.attributes.formats}
                         format={component}
                         alt={component.Image.data.attributes.alternativeText}
+                        baseSrc={component.Image.data.attributes}
                         wrapped={true}
                      />
                   )

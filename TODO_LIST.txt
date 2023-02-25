@@ -1,3 +1,3 @@
-- News e Progetti: Se non è presente un immagine nativa salta
-- News e Progetti: Se inserisco un immagine piccola (es. Logo) non trova la dimensione
+x News e Progetti: Se non è presente un immagine nativa salta
+x News e Progetti: Se inserisco un immagine piccola (es. Logo) non trova la dimensione
 - Navigazione: scopri/portfolio "page not found" se si ricarica la pagina

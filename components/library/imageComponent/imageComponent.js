@@ -3,18 +3,23 @@ import StaticVars from "../../../lib/static";
 
 const ComponentImage = (data) => {
    let image;
+if (data.sizes) {
    switch (data.format.Format) {
       case 'thumbnail':
          image = data.sizes.thumbnail
          break;
       case 'small':
-         image = data.sizes.small
+         image = !data.sizes.small ? data.sizes.thumbnail : data.sizes.small
          break;
       case 'medium':
-         image = data.sizes.medium
+         image = !data.sizes.medium ? data.sizes.thumbnail : data.sizes.medium
+         break
       default:
-         image = data.sizes.large
+         image = !data.sizes.large ? data.sizes.thumbnail : data.sizes.large
    }
+} else {
+   image = data.baseSrc
+}
 
    if (data.wrapped) {
       return (

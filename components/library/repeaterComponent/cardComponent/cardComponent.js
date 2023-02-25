@@ -1,6 +1,6 @@
 import {motion} from "framer-motion"
 import Link from "next/link";
-import ImageComponent from "../../imageComponent/imageComponent";
+import ComponentImage from "../../imageComponent/imageComponent";
 import styles from './card.module.scss'
 
 
@@ -21,10 +21,11 @@ const CardComponent = (repeater) => {
                href={`/${repeater.component.data.Collection}/${repeater.page.attributes.slug}`}>
                <div className="uk-card-media-top">
                   {image &&
-                     <ImageComponent
+                     <ComponentImage
                         sizes={image.attributes.formats}
                         format={'small'}
                         alt={image.attributes.alternativeText}
+                        baseSrc={image.attributes}
                         wrapped={false}
                      />
                   }
