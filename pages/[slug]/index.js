@@ -15,7 +15,7 @@ export default function Page({settings, thisPage, navigation, components, image}
       <Layout navigation={navigation} settings={settings} thisPage={thisPage.data}>
          {image && <Image src={image.url} height={image.height} width={image.width} layout="fixed" alt=""/>}
          <LibraryComponents data={components} thisPage={thisPage.data}></LibraryComponents>
-         {/*{console.log(collection)}*/}
+         {console.log(navigation)}
       </Layout>
    )
 }

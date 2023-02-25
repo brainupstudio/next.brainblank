@@ -8,22 +8,3 @@
     gap: $global-gutter;
     flex-wrap: wrap;
 }
-
-.c_repeater__item {
-    width: calc(calc(100% / 2) - calc($global-gutter / 2));
-
-    a {
-        text-decoration: none;
-        color: inherit;
-
-        &:hover {
-            text-decoration: none;
-            color: inherit;
-        }
-    }
-
-    img {
-        aspect-ratio: 1000 / 400;
-        object-fit: cover;
-    }
-}
