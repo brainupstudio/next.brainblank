@@ -16,7 +16,7 @@ export default function Page({settings, thisPage, navigation, components, image}
          {image && <Image src={image.url} height={image.height} width={image.width} layout="fixed" alt=""/>}
          <LibraryComponents data={components} thisPage={thisPage.data}></LibraryComponents>
       </Layout>
-   )
+)
 }
 
 export async function getStaticPaths() {
@@ -36,7 +36,6 @@ export async function getStaticProps({params}) { //context?
    const pageResponse = await getSinglePage(params, 'pages');
    const imageResponse = await getImagePage(pageResponse.data.attributes, 'large', 'pages');
    const componentsResponse = await getComponentsPage(pageResponse.data.attributes, 'pages');
-   //const collectionResponse = await getCollectionLoop('news');
 
    return {
       props: {
@@ -45,7 +44,6 @@ export async function getStaticProps({params}) { //context?
          thisPage: pageResponse,
          components: componentsResponse,
          image: imageResponse,
-         //collection: collectionResponse,
       },
    };
 }

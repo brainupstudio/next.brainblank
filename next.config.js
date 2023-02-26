@@ -22,14 +22,26 @@ const nextConfig = {
       },
     ],
   },
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: '/:node/:slug',
-  //       destination: '/:slug',
-  //     }
-  //   ]
-  // },
+  async rewrites() {
+    return {
+      afterFiles: [
+        {
+          source: '/news/:slug',
+          destination: '/news/:slug',
+        },
+        {
+          source: '/projects/:slug',
+          destination: '/projects/:slug',
+        }
+      ],
+      fallback: [
+        {
+          source: '/:node/:slug',
+          destination: '/:slug',
+        }
+      ]
+    }
+  },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   }
